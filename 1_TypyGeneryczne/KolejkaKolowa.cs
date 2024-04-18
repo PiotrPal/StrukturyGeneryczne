@@ -16,15 +16,18 @@ namespace _1_TypyGeneryczne {
         public void Zapisz(double wartosc) {
             bufor[koniec] = wartosc;
             koniec = (koniec + 1) % bufor.Length;
-            if (koniec == poczatek) { // na poczatek oba sa 0 wiec wejdzie w to
+            if (koniec == poczatek) {
                 poczatek = (poczatek + 1) % bufor.Length;
             }
         }
         public double Odczytaj() {
             var wynik = bufor[poczatek];
-            poczatek = (poczatek + 1) % bufor.Length; // #problem bo pocatek idzie dalej a koniec zostaje liczba zostaje i tworzy sie puste miejsce?
+            poczatek = (poczatek + 1) % bufor.Length;
             return wynik;
         }
+        //public double OdczytajMoje() {
+        //    return bufor[poczatek]; //jestm glupi
+        //}
         public int Pojemnosc {
             get {
                 return bufor.Length;
@@ -40,6 +43,5 @@ namespace _1_TypyGeneryczne {
                 return (koniec + 1) % bufor.Length == poczatek;
             }
         }
-
     }
 }
