@@ -53,18 +53,49 @@ namespace _2_KolekcjeGeneryczne {
             //}
 
             //KOLEJKA
-            Queue<Pracownik> kolejka = new Queue<Pracownik>();
+            //Queue<Pracownik> kolejka = new Queue<Pracownik>();
 
+            //kolejka.Enqueue(new Pracownik { Name = "Geralt ", Surname = "Z Rivii" });
+            //kolejka.Enqueue(new Pracownik { Name = "Ravix ", Surname = "Z Czteroroga" });
+            //kolejka.Enqueue(new Pracownik { Name = "Jaskier ", Surname = "Pankratz" });
+            //kolejka.Enqueue(new Pracownik { Name = "Cahir ", Surname = "aep Ceallach" });
+            //kolejka.Enqueue(new Pracownik { Name = "Emiel ", Surname = "Regis" });
+
+            //while (kolejka.Count > 0) {
+            //    var pracownik = kolejka.Dequeue();
+            //    Console.WriteLine(pracownik.Name + "" + pracownik.Surname);
+            //}
+
+            //STOS...(przeniesione do oddzielnych metod)
+            Kolejka();
+            Stos();
+
+
+        }
+
+        private static void Stos() {
+            Stack<Pracownik> stos = new Stack<Pracownik>();
+            stos.Push(new Pracownik { Name = "Cahir ", Surname = "aep Ceallach" });
+            stos.Push(new Pracownik { Name = "Triss ", Surname = "Merigold" });
+            stos.Push(new Pracownik { Name = "Leo ", Surname = "Bonhart" });
+
+            Console.WriteLine("\n--------Stos-------");
+            while (stos.Count > 0) {
+                var pracownik = stos.Pop();
+                Console.WriteLine(pracownik.Name + "" + pracownik.Surname);
+            }
+        }
+
+        private static void Kolejka() {
+            Queue<Pracownik> kolejka = new Queue<Pracownik>();
             kolejka.Enqueue(new Pracownik { Name = "Geralt ", Surname = "Z Rivii" });
             kolejka.Enqueue(new Pracownik { Name = "Ravix ", Surname = "Z Czteroroga" });
             kolejka.Enqueue(new Pracownik { Name = "Jaskier ", Surname = "Pankratz" });
-            kolejka.Enqueue(new Pracownik { Name = "Cahir ", Surname = "aep Ceallach" });
-            kolejka.Enqueue(new Pracownik { Name = "Emiel ", Surname = "Regis" });
 
+            Console.WriteLine("\n--------Kolejka-------");
             while (kolejka.Count > 0) {
                 var pracownik = kolejka.Dequeue();
                 Console.WriteLine(pracownik.Name + "" + pracownik.Surname);
-
             }
         }
     }
