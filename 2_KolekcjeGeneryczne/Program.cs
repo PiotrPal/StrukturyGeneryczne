@@ -67,10 +67,46 @@ namespace _2_KolekcjeGeneryczne {
             //}
 
             //STOS...(przeniesione do oddzielnych metod)
-            Kolejka();
-            Stos();
+            //Kolejka();
+            //Stos();
+
+            ////HashSet int
+            //HashSet<int> set = new HashSet<int>();
+            //set.Add(1);
+            //set.Add(10);
+            //set.Add(2);
+            //set.Add(3);
+            //set.Add(4);
+            //set.Add(5);
+            //set.Add(6);
+            //set.Add(7);
+            //set.Add(8);
+            //set.Add(9);
+            //set.Add(10);
+            //set.Add(10);
+
+            //Console.WriteLine("\n-----HashSet-----");
+            //foreach (int i in set) {
+            //    Console.WriteLine(i);
+            //}
+
+            HashSet();
 
 
+        }
+
+        private static void HashSet() {
+            HashSet<Pracownik> set = new HashSet<Pracownik>();
+            var pracownikTest = new Pracownik { Name = "Calante" };
+
+            set.Add(pracownikTest);
+            set.Add(pracownikTest);
+            set.Add(new Pracownik { Name = "Ciri" });
+            set.Add(new Pracownik { Name = "Ciri" });
+
+            foreach (Pracownik p in set) {
+                Console.WriteLine(p.Name);
+            }
         }
 
         private static void Stos() {
