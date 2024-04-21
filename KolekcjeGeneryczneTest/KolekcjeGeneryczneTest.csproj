@@ -54,6 +54,7 @@
     <Compile Include="KolejkaTest.cs" />
     <Compile Include="StackTest.cs" />
     <Compile Include="HashSetTest.cs" />
+    <Compile Include="LinkedListTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

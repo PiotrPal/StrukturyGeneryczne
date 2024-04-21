@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace _2_KolekcjeGeneryczne {
     internal class Program {
         static void Main(string[] args) {
-            //TABLICE
+            //#TABLICE
             //Pracownik[] pracownicy = new Pracownik[] {
             //    new Pracownik{Name = "Jack", Surname = "Sparrow"},
             //    new Pracownik{Name = "David", Surname = "Jones"},
@@ -22,7 +22,7 @@ namespace _2_KolekcjeGeneryczne {
 
             //pracownicy[9] = new Pracownik { Name = "Capitan", Surname = "Barbossa" };
 
-            //LISTA
+            //#LISTA
             //List<Pracownik> pracownicy = new List<Pracownik> {
             //    new Pracownik{Name = "Jack", Surname = "Sparrow"},
             //    new Pracownik{Name = "David", Surname = "Jones"},
@@ -52,7 +52,7 @@ namespace _2_KolekcjeGeneryczne {
             //    liczby.Add(1);
             //}
 
-            //KOLEJKA
+            //#KOLEJKA
             //Queue<Pracownik> kolejka = new Queue<Pracownik>();
 
             //kolejka.Enqueue(new Pracownik { Name = "Geralt ", Surname = "Z Rivii" });
@@ -66,11 +66,11 @@ namespace _2_KolekcjeGeneryczne {
             //    Console.WriteLine(pracownik.Name + "" + pracownik.Surname);
             //}
 
-            //STOS...(przeniesione do oddzielnych metod)
+            //#STOS...(przeniesione do oddzielnych metod)
             //Kolejka();
             //Stos();
 
-            ////HashSet int
+            ////#HashSet int
             //HashSet<int> set = new HashSet<int>();
             //set.Add(1);
             //set.Add(10);
@@ -90,9 +90,45 @@ namespace _2_KolekcjeGeneryczne {
             //    Console.WriteLine(i);
             //}
 
-            HashSet();
+            //HashSet();
 
+            //#LinkedList
+            //LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
+            list.AddFirst(1);
+            list.AddFirst(3);
+            list.AddFirst(7);
 
+            var item1 = list.First;// to jest węzeł a nie pierwszy element
+            var itemLast = list.Last;
+
+            list.AddAfter(item1, 9);
+            list.AddBefore(item1, 22);
+            list.AddBefore(item1, 69);
+
+            Console.WriteLine("--x---LList---x--");
+
+            //zamiast foreach
+            var wezel = list.First;
+            while (wezel != null) {
+                Console.WriteLine(wezel.Value);
+                wezel = wezel.Next;
+            }
+
+        }
+
+        private static void LinkedList() {
+            LinkedList<int> list = new LinkedList<int>();
+            list.AddFirst(1);
+            list.AddFirst(3);
+            list.AddFirst(7);
+            list.AddLast(0);
+            list.AddLast(2);
+
+            Console.WriteLine("-----LList-----");
+            foreach (var item in list) {
+                Console.WriteLine(item);
+            }
         }
 
         private static void HashSet() {
