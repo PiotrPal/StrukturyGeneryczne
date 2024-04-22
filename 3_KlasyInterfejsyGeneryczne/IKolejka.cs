@@ -1,5 +1,7 @@
-﻿namespace _3_KlasyInterfejsyGeneryczne { //automatyczne generowanie
-    public interface IKolejka<T> {
+﻿using System.Collections.Generic;
+
+namespace _3_KlasyInterfejsyGeneryczne { //automatyczne generowanie
+    public interface IKolejka<T> : IEnumerable<T> {
         bool JestPelny { get; }
         bool JestPusty { get; }
 
