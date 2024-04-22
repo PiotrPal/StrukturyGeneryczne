@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+
 namespace _3_KlasyInterfejsyGeneryczne {
     //public interface IKolejka<T> {
     //    bool JestPusty {  get; }

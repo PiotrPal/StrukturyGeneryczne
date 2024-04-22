@@ -136,7 +136,30 @@ namespace _2_KolekcjeGeneryczne {
             //}
 
             //#SortedSet
-            SortedSet();
+            //SortedSet();
+
+            var pracownicy = new SortedDictionary<string,SortedSet<Pracownik>>();
+
+            pracownicy.Add("Sprzedaz", new SortedSet<Pracownik>(new PracownikComparer()));
+            pracownicy["Sprzedaz"].Add(new Pracownik { Surname = "Nowak" });
+            pracownicy["Sprzedaz"].Add(new Pracownik { Surname = "Głowacki" });
+            pracownicy["Sprzedaz"].Add(new Pracownik { Surname = "Czapla" });
+            pracownicy["Sprzedaz"].Add(new Pracownik { Surname = "Nowak" });
+            
+            pracownicy.Add("Ksiegowosc", new SortedSet<Pracownik>(new PracownikComparer()));
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Nowak" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Kowal" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Kowal" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Kaczor" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Bogacki" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Nowak" });
+
+            foreach (var dzial in pracownicy) {
+                Console.WriteLine(dzial.Key);
+                foreach (var pracownik in dzial.Value) {
+                    Console.WriteLine("\t"+pracownik.Surname);
+                }
+            }
         }
 
         private static void SortedSet() {
