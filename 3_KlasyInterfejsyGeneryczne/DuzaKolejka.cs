@@ -1,15 +1,28 @@
-﻿namespace _3_KlasyInterfejsyGeneryczne {
-    internal class DuzaKolejka<T> : IKolejka<T> {
-        public bool JestPelny => throw new System.NotImplementedException();
+﻿using System.Collections.Generic;
 
-        public bool JestPusty => throw new System.NotImplementedException();
+namespace _3_KlasyInterfejsyGeneryczne {
+    public class DuzaKolejka<T> : IKolejka<T> {
 
-        public T Odczytaj() {
-            throw new System.NotImplementedException();
+        protected Queue<T> queue;
+
+        public DuzaKolejka()
+        {
+            queue = new Queue<T>();
+        }
+        public virtual bool JestPelny => throw new System.NotImplementedException();//nigdy nie bedzie pelna
+
+        public virtual bool JestPusty {
+            get {
+                return queue.Count == 0;
+            }
         }
 
-        public void Zapisz(T wartosc) {
-            throw new System.NotImplementedException();
+        public virtual T Odczytaj() {
+            return queue.Dequeue();
+        }
+
+        public virtual void Zapisz(T wartosc) {
+            queue.Enqueue(wartosc);
         }
     }
 }
