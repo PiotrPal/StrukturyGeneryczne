@@ -55,6 +55,7 @@
     <Compile Include="StackTest.cs" />
     <Compile Include="HashSetTest.cs" />
     <Compile Include="LinkedListTest.cs" />
+    <Compile Include="DictionaryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

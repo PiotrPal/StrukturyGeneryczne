@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BC5A8C62-B0DB-4BD1-855A-3BBAF34DB4D4}</ProjectGuid>
+    <ProjectGuid>{1D893CB4-3E81-4DA5-BF41-0CC474EF6CB4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_2_KolekcjeGeneryczne</RootNamespace>
-    <AssemblyName>2_KolekcjeGeneryczne</AssemblyName>
+    <RootNamespace>_3_KlasyInterfejsyGeneryczne</RootNamespace>
+    <AssemblyName>3_KlasyInterfejsyGeneryczne</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DziałyCollection.cs" />
-    <Compile Include="Pracownik.cs" />
-    <Compile Include="PracownikComparer.cs" />
+    <Compile Include="DuzaKolejka.cs" />
+    <Compile Include="IKolejka.cs" />
+    <Compile Include="KolejkaKolowa2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
