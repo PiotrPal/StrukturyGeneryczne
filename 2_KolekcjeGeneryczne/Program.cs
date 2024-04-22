@@ -138,26 +138,25 @@ namespace _2_KolekcjeGeneryczne {
             //#SortedSet
             //SortedSet();
 
-            var pracownicy = new SortedDictionary<string,SortedSet<Pracownik>>();
+            var pracownicy = new DziałyCollection();
 
-            pracownicy.Add("Sprzedaz", new SortedSet<Pracownik>(new PracownikComparer()));
-            pracownicy["Sprzedaz"].Add(new Pracownik { Surname = "Nowak" });
-            pracownicy["Sprzedaz"].Add(new Pracownik { Surname = "Głowacki" });
-            pracownicy["Sprzedaz"].Add(new Pracownik { Surname = "Czapla" });
-            pracownicy["Sprzedaz"].Add(new Pracownik { Surname = "Nowak" });
-            
-            pracownicy.Add("Ksiegowosc", new SortedSet<Pracownik>(new PracownikComparer()));
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Nowak" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Kowal" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Kowal" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Kaczor" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Bogacki" });
-            pracownicy["Ksiegowosc"].Add(new Pracownik { Surname = "Nowak" });
+            //pracownicy.Add("tak", new Pracownik { Surname = "dupa" });
+            pracownicy  .Add("Sprzedaz", new Pracownik { Surname = "Nowak" })
+                        .Add("Sprzedaz", new Pracownik { Surname = "Głowacki" })
+                        .Add("Sprzedaz", new Pracownik { Surname = "Czapla" })
+                        .Add("Sprzedaz", new Pracownik { Surname = "Nowak" });
+
+            pracownicy  .Add("Ksiegowosc",new Pracownik { Surname = "Nowak"})
+                        .Add("Ksiegowosc",new Pracownik { Surname = "Kowal" })
+                        .Add("Ksiegowosc",new Pracownik { Surname = "Kowal" })
+                        .Add("Ksiegowosc",new Pracownik { Surname = "Kaczor" })
+                        .Add("Ksiegowosc",new Pracownik { Surname = "Bogacki" })
+                        .Add("Ksiegowosc", new Pracownik { Surname = "Nowak" });
 
             foreach (var dzial in pracownicy) {
                 Console.WriteLine(dzial.Key);
                 foreach (var pracownik in dzial.Value) {
-                    Console.WriteLine("\t"+pracownik.Surname);
+                    Console.WriteLine("\t" + pracownik.Surname);
                 }
             }
         }
