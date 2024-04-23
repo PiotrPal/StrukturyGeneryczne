@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace _3_KlasyInterfejsyGeneryczne {
+namespace _4_MetodyDelegatyGeneryczne {
     public class DuzaKolejka<T> : IKolejka<T> {
 
         protected Queue<T> queue;
 
-        public DuzaKolejka()
-        {
+        public DuzaKolejka() {
             queue = new Queue<T>();
         }
         public virtual bool JestPelny => throw new System.NotImplementedException();//nigdy nie bedzie pelna
@@ -28,20 +27,13 @@ namespace _3_KlasyInterfejsyGeneryczne {
         }
 
         public IEnumerator<T> GetEnumerator() {
-            //return queue.GetEnumerator();
-
             foreach (var item in queue) {
-                //jakis kod np filtrowanie
                 yield return item;
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator() { //sztuczka 
+        IEnumerator IEnumerable.GetEnumerator() {
             return queue.GetEnumerator();
-            //foreach (var item in queue) {
-            //    //jakis kod np filtrowanie
-            //    yield return item;
-            //}
         }
     }
 }

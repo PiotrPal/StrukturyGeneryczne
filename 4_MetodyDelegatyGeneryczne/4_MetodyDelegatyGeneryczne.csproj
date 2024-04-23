@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1D893CB4-3E81-4DA5-BF41-0CC474EF6CB4}</ProjectGuid>
+    <ProjectGuid>{FFDF9533-F8D3-4B0D-8814-AEBEFAC41B43}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_3_KlasyInterfejsyGeneryczne</RootNamespace>
-    <AssemblyName>3_KlasyInterfejsyGeneryczne</AssemblyName>
+    <RootNamespace>_4_MetodyDelegatyGeneryczne</RootNamespace>
+    <AssemblyName>4_MetodyDelegatyGeneryczne</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

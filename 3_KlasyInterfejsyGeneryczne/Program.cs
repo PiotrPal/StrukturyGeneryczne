@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace _3_KlasyInterfejsyGeneryczne {
     internal class Program {
+        static void KonsolaWypisz(double dane) {
+            Console.WriteLine("# "+dane);
+        }
         static void Main(string[] args) {
-
             //var kolejka = new KolejkaKolowa2<double>();
             var kolejka = new KolejkaKolowa2<double>();
 
             WprowadzanieDanych(kolejka);
 
-            foreach (var item in kolejka) {
-                Console.WriteLine(item);
-            }
+            //var konsolaWyjscie = new Drukarka<double>(KonsolaWypisz); // nie trzeba moozna od razu przekazać do Drukuj(KonsolaWypisz)
+
+            kolejka.Drujuj(KonsolaWypisz);//nie musimy    kolejka.Drujuj<double>(); bo sam to wie
+            Console.WriteLine(" \n-----\n");
 
             PrzetwarzanieDanych(kolejka);
 
