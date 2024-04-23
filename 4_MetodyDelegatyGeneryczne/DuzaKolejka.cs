@@ -7,8 +7,7 @@ namespace _4_MetodyDelegatyGeneryczne {
 
         protected Queue<T> queue;
 
-        public DuzaKolejka()
-        {
+        public DuzaKolejka() {
             queue = new Queue<T>();
         }
         public virtual bool JestPelny => throw new System.NotImplementedException();//nigdy nie bedzie pelna
@@ -33,7 +32,8 @@ namespace _4_MetodyDelegatyGeneryczne {
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator() {  
+        IEnumerator IEnumerable.GetEnumerator() {
             return queue.GetEnumerator();
+        }
     }
 }

@@ -6,14 +6,35 @@ using System.Threading.Tasks;
 
 namespace _4_MetodyDelegatyGeneryczne {
     internal class Program {
-        static void Konsolawypisz(double dane) {
-            Console.WriteLine(dane);
-        }
         static void Main(string[] args) {
 
+            //Action<double> drukuj2 = KonsolaWypisz;
+            ////drukuj2(6.5);
+
+            //Action<double> drukuj2 = delegate (double dane) { // metoda anonimowa
+            //    Console.WriteLine(dane);
+            //};
+
+            //Action<double> drukuj2 = d => Console.WriteLine(d); // lambda?
+
+            Console.WriteLine("\t--Func--");
+            Func<double,double> potegowanie = d => d * d;
+            Func<double, double, double> dodaj = (x,y) => x+y;
+
+            Console.WriteLine( potegowanie(5));
+            Console.WriteLine( dodaj(2, 6));
+
+            Console.WriteLine("\t--Action--");
+            Action<int, int, int> test = (a, b, c) => Console.WriteLine(a + b + c);
+            test(1, 2, 3);
+
+            Console.WriteLine("\t--Program--");
             var kolejka = new KolejkaKolowa2<double>();
+            
             WprowadzanieDanych(kolejka);
-            kolejka.Drukuj(Konsolawypisz);
+            
+            kolejka.Drukuj(d => Console.WriteLine(d));// lambda bezposredio przy wywolaniu
+            
             PrzetwarzanieDanych(kolejka);
         }
 

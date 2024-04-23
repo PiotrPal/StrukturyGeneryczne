@@ -16,7 +16,7 @@ namespace _4_MetodyDelegatyGeneryczne {
             }
         }
 
-        public static void Drukuj<T>(this IKolejka<T>queue, Drukarka<T> wydruk) {
+        public static void Drukuj<T>(this IKolejka<T>queue, Action<T> wydruk) {
             foreach (var item in queue) {
                 wydruk(item);
             }
