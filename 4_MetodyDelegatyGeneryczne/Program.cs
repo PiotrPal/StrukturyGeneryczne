@@ -16,7 +16,7 @@ namespace _4_MetodyDelegatyGeneryczne {
             //};
 
             //Action<double> drukuj2 = d => Console.WriteLine(d); // lambda?
-
+            #region delegaty
             Console.WriteLine("\t--Action--");
             Action<int, int, int> test = (a, b, c) => Console.WriteLine(a + b + c);
             test(1, 2, 3);
@@ -34,12 +34,20 @@ namespace _4_MetodyDelegatyGeneryczne {
 
             Console.WriteLine(mniejszeODsto(30));
             //Console.WriteLine(mniejszeODstoFunc(30));
+            #endregion
 
             Console.WriteLine("\t--Program--");
             var kolejka = new KolejkaKolowa2<double>();
-            
             WprowadzanieDanych(kolejka);
-            
+
+            Console.WriteLine("\t--Converter--");
+            //Converter<double, DateTime> konwerter = d => new DateTime(2024, 1, 1).AddDays(d); //skrocenie zapisu tez
+
+            var jakoData = kolejka.Mapuj(d => new DateTime(2024, 1, 1).AddDays(d)); // skrocony zapis z kolejka.Mapuj<double,DateTime>(konwerter);
+            foreach (var item in jakoData) { 
+                Console.WriteLine(item);
+            }
+
             kolejka.Drukuj(d => Console.WriteLine(d));// lambda bezposredio przy wywolaniu
             
             PrzetwarzanieDanych(kolejka);
