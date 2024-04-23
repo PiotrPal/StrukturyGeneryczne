@@ -17,16 +17,23 @@ namespace _4_MetodyDelegatyGeneryczne {
 
             //Action<double> drukuj2 = d => Console.WriteLine(d); // lambda?
 
-            Console.WriteLine("\t--Func--");
-            Func<double,double> potegowanie = d => d * d;
-            Func<double, double, double> dodaj = (x,y) => x+y;
-
-            Console.WriteLine( potegowanie(5));
-            Console.WriteLine( dodaj(2, 6));
-
             Console.WriteLine("\t--Action--");
             Action<int, int, int> test = (a, b, c) => Console.WriteLine(a + b + c);
             test(1, 2, 3);
+
+            Console.WriteLine("\t--Func--");
+            Func<double, double> potegowanie = d => d * d;
+            Func<double, double, double> dodaj = (x, y) => x + y;
+
+            Console.WriteLine(potegowanie(5));
+            Console.WriteLine(dodaj(2, 6));
+
+            Console.WriteLine("\t--Predicate--");
+            Predicate<double> mniejszeODsto = d => d < 100;
+            //Func<double, bool> mniejszeODstoFunc = d => d < 100;//test czy to to samo
+
+            Console.WriteLine(mniejszeODsto(30));
+            //Console.WriteLine(mniejszeODstoFunc(30));
 
             Console.WriteLine("\t--Program--");
             var kolejka = new KolejkaKolowa2<double>();
