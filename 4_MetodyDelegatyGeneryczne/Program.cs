@@ -37,7 +37,9 @@ namespace _4_MetodyDelegatyGeneryczne {
             #endregion
 
             Console.WriteLine("\t--Program--");
-            var kolejka = new KolejkaKolowa2<double>();
+            var kolejka = new KolejkaKolowa2<double>(size: 3);
+            kolejka.elementUsuniety += Kolejka_elementUsuniety;
+            
             WprowadzanieDanych(kolejka);
 
             Console.WriteLine("\t--Converter--");
@@ -51,6 +53,10 @@ namespace _4_MetodyDelegatyGeneryczne {
             kolejka.Drukuj(d => Console.WriteLine(d));// lambda bezposredio przy wywolaniu
             
             PrzetwarzanieDanych(kolejka);
+        }
+
+        private static void Kolejka_elementUsuniety(object sender, ElementUsunietyEventArgs<double> e) {
+            Console.WriteLine("Kolejka pelna. Element usuniety to {0}, nowy element to {1}",e.ElementUsuniety,e.ElementDodany);
         }
 
         private static void PrzetwarzanieDanych(IKolejka<double> kolejka) {
