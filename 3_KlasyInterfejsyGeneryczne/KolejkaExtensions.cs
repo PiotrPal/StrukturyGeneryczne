@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Net.NetworkInformation;
 
 namespace _3_KlasyInterfejsyGeneryczne {
+
+    public delegate void Drukarka<T>(T dane);
     public static class KolejkaExtensions {
         public static IEnumerable<Tout> ElementJakoInt<T,Tout>(this IKolejka<T> queue ) {
             var konwerter = TypeDescriptor.GetConverter(typeof(T));
@@ -14,9 +16,9 @@ namespace _3_KlasyInterfejsyGeneryczne {
             }
         }
 
-        public static void Drujuj<T>(this IKolejka<T>queue) {
+        public static void Drujuj<T>(this IKolejka<T>queue, Drukarka<T> wydruk) {
             foreach (var item in queue) {
-                Console.WriteLine(item);
+                wydruk(item);
             }
         }
     }
