@@ -7,5 +7,7 @@ namespace _3_KlasyInterfejsyGeneryczne { //automatyczne generowanie
 
         T Odczytaj();
         void Zapisz(T wartosc);
+        //IEnumerable<Tout> ElementJakoInt<Tout>();
+        //IEnumerable<string> ElementJakoStr();
     }
 }

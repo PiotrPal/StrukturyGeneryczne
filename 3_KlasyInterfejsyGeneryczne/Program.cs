@@ -13,7 +13,13 @@ namespace _3_KlasyInterfejsyGeneryczne {
 
             WprowadzanieDanych(kolejka);
 
-            foreach (var item in kolejka) {
+            kolejka.Drujuj();//nie musimy    kolejka.Drujuj<double>(); bo sam to wie
+            Console.WriteLine(" \n-----\n");
+
+            var elementJakoInt = kolejka.ElementJakoInt<double, int>();
+            // var elementJakoStr = kolejka.ElementJakoInt<string>();
+
+            foreach (var item in elementJakoInt) {
                 Console.WriteLine(item);
             }
 

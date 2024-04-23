@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace _3_KlasyInterfejsyGeneryczne {
     public class DuzaKolejka<T> : IKolejka<T> {
